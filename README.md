@@ -3,12 +3,17 @@
 Responsive portfolio website built using HTML, CSS and JavaScript.
 
 ## Features
+
 - Responsive Design
-- Hamburger Menu
-- Scroll Animations
-- Projects Section
-- Resume Download
+- Mobile Hamburger Menu
+- Typing Animation
+- Smooth Scroll Effects
+- Skills Section
+- Projects Showcase
+- Resume Download Button
 - Contact Section
+- Modern UI Design
+
 
 ## Technologies Used
 - HTML
