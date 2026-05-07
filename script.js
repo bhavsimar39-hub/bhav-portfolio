@@ -70,6 +70,7 @@ cards.forEach((card) => {
 
 const menuBtn = document.querySelector(".menu-btn");
 const navMenu = document.querySelector(".nav-links");
+const navItems = document.querySelectorAll(".nav-links a");
 
 menuBtn.addEventListener("click", () => {
 
@@ -77,6 +78,17 @@ menuBtn.addEventListener("click", () => {
 
 });
 
+// CLOSE MENU AFTER CLICK
+
+navItems.forEach((item) => {
+
+    item.addEventListener("click", () => {
+
+        navMenu.classList.remove("active");
+
+    });
+
+});
 // ================= TYPING ANIMATION =================
 
 var typed = new Typed(".typing", {
