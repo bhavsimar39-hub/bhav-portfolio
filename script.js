@@ -104,6 +104,9 @@ if (menuBtn) {
     });
 }
 
+const navCloseBtn = document.getElementById("navCloseBtn");
+if (navCloseBtn) navCloseBtn.addEventListener("click", closeMenu);
+
 if (navOverlay) {
     navOverlay.addEventListener("click", closeMenu);
 }
