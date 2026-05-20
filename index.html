@@ -4,56 +4,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bhav Simar | Portfolio</title>
+    <title>Bhav Simar | Full Stack Developer</title>
     <link rel="shortcut icon" href="https://tse3.mm.bing.net/th/id/OIP.xv2qNN7apPh5OFJ9NLPKGgHaFj?rs=1&pid=ImgDetMain&o=7&rm=3" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
 
+    <!-- ================= CURSOR ================= -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+
     <!-- ================= NAVBAR ================= -->
-    <nav class="navbar">
-        <div class="logo">Bhav.</div>
-        <div class="menu-btn"><i class="fa-solid fa-bars"></i></div>
-        <ul class="nav-links">
+    <nav class="navbar" id="navbar">
+        <div class="logo">BS<span class="logo-dot">.</span></div>
+        <div class="menu-btn" id="menuBtn"><i class="fa-solid fa-bars"></i></div>
+        <ul class="nav-links" id="navMenu">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
     <!-- ================= HERO ================= -->
     <section class="hero" id="home">
-        <div class="hero-text">
-            <h1>Hi, I'm <span>Bhav Simar</span></h1>
-            <h2>I'm a <span class="typing"></span></h2>
-            <p>Passionate about building responsive web applications and AI-powered platforms. Currently pursuing B.Tech CSE at VIT Bhopal.</p>
-            <div class="hero-buttons">
-                <a href="#contact"><button>Hire Me</button></a>
-                <a href="resume/Bhav_Simar_Resume.pdf" download><button class="btn2">Download CV</button></a>
+        <div class="hero-bg-grid"></div>
+        <div class="hero-glow"></div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    Available for Internships
+                </div>
+                <h1>Hi, I'm <br><span class="name-gradient">Bhav Simar</span></h1>
+                <h2>I build <span class="typing"></span></h2>
+                <p>Passionate about crafting responsive web applications and AI-powered platforms. Currently pursuing B.Tech CSE at <strong>VIT Bhopal</strong>.</p>
+                <div class="hero-buttons">
+                    <a href="#contact"><button class="btn-primary"><i class="fa-solid fa-paper-plane"></i> Hire Me</button></a>
+                    <a href="resume/Bhav_Simar_Resume.pdf" download><button class="btn-outline"><i class="fa-solid fa-download"></i> Download CV</button></a>
+                </div>
+                <div class="hero-scroll-hint">
+                    <span>Scroll to explore</span>
+                    <i class="fa-solid fa-arrow-down bounce"></i>
+                </div>
             </div>
-        </div>
-        <div class="hero-image">
-            <img src="images/profile.jpg" alt="Bhav Simar">
+            <div class="hero-image">
+                <div class="image-frame">
+                    <div class="image-glow-ring"></div>
+                    <img src="images/profile.jpg" alt="Bhav Simar">
+                    <div class="image-badge-card">
+                        <i class="fa-solid fa-code"></i>
+                        <div>
+                            <p class="badge-label">Current Stack</p>
+                            <p class="badge-value">MERN + AI</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- ================= ABOUT ================= -->
     <section class="about" id="about">
-        <h2 class="section-title">About Me</h2>
+        <div class="section-header">
+            <span class="section-tag">// About</span>
+            <h2 class="section-title">Who Am I?</h2>
+        </div>
         <div class="about-content">
-            <div class="about-image">
+            <div class="about-image-wrap">
                 <img src="images/profile.jpg" alt="about">
+                <div class="about-img-accent"></div>
             </div>
             <div class="about-text">
                 <p>
-                    I am a 3rd Year B.Tech Computer Science student at <strong>VIT Bhopal</strong> with a CGPA of <strong>9.27/10</strong>. I specialize in Full Stack Web Development and AI-powered applications using the MERN stack.
+                    I am a <strong>3rd Year B.Tech Computer Science</strong> student at <strong>VIT Bhopal</strong> with a CGPA of <strong>9.27/10</strong>. I specialize in Full Stack Web Development and AI-powered applications using the MERN stack.
                 </p>
                 <br>
                 <p>
@@ -65,41 +97,107 @@
                         <p>CGPA</p>
                     </div>
                     <div class="stat">
-                        <h3>3+</h3>
+                        <h3>4+</h3>
                         <p>Projects</p>
                     </div>
                     <div class="stat">
                         <h3>5+</h3>
                         <p>Certifications</p>
                     </div>
+                    <div class="stat">
+                        <h3>2</h3>
+                        <p>Internships</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ================= EXPERIENCE ================= -->
+    <section class="experience" id="experience">
+        <div class="section-header">
+            <span class="section-tag">// Experience</span>
+            <h2 class="section-title">Work Experience</h2>
+        </div>
+        <div class="timeline">
+
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="exp-header">
+                        <div>
+                            <h3>Remote Intern</h3>
+                            <h4><i class="fa-solid fa-building"></i> Pinnacle Labs</h4>
+                        </div>
+                        <div class="exp-meta">
+                            <span class="exp-badge remote"><i class="fa-solid fa-wifi"></i> Remote</span>
+                            <span class="exp-date"><i class="fa-regular fa-calendar"></i> May 10, 2026 – Jun 10, 2026</span>
+                        </div>
+                    </div>
+                    <p class="exp-desc">Contributed to web development projects remotely, gaining hands-on experience in building and deploying full-stack solutions aligned with real-world business requirements.</p>
+                    <div class="exp-tags">
+                        <span>Full Stack</span><span>Web Development</span><span>Remote</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="exp-header">
+                        <div>
+                            <h3>Software Development Intern</h3>
+                            <h4><i class="fa-solid fa-building"></i> CodTech IT Solutions</h4>
+                        </div>
+                        <div class="exp-meta">
+                            <span class="exp-badge intern"><i class="fa-solid fa-laptop-code"></i> Internship</span>
+                            <span class="exp-date"><i class="fa-regular fa-calendar"></i> May 2026 – Jul 2026</span>
+                        </div>
+                    </div>
+                    <p class="exp-desc">Worked on software development tasks, collaborating with the team to build and maintain modern web applications. Gained exposure to industry-standard development workflows and tools.</p>
+                    <div class="exp-tags">
+                        <span>Software Development</span><span>MERN Stack</span><span>Team Collaboration</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
     <!-- ================= SKILLS ================= -->
     <section class="skills" id="skills">
-        <h2 class="section-title">Skills</h2>
+        <div class="section-header">
+            <span class="section-tag">// Skills</span>
+            <h2 class="section-title">Tech Stack</h2>
+        </div>
         <div class="skills-container">
-            <div class="skill-card"><i class="fa-brands fa-html5"></i><h3>HTML5</h3></div>
-            <div class="skill-card"><i class="fa-brands fa-css3-alt"></i><h3>CSS3</h3></div>
-            <div class="skill-card"><i class="fa-brands fa-js"></i><h3>JavaScript</h3></div>
-            <div class="skill-card"><i class="fa-brands fa-react"></i><h3>React.js</h3></div>
-            <div class="skill-card"><i class="fa-brands fa-node-js"></i><h3>Node.js</h3></div>
-            <div class="skill-card"><i class="fa-brands fa-python"></i><h3>Python</h3></div>
-            <div class="skill-card"><i class="fa-solid fa-database"></i><h3>MongoDB</h3></div>
-            <div class="skill-card"><i class="fa-brands fa-java"></i><h3>Java</h3></div>
-            <div class="skill-card"><i class="fa-solid fa-wind"></i><h3>Tailwind CSS</h3></div>
+            <div class="skill-card reveal"><i class="fa-brands fa-html5"></i><h3>HTML5</h3></div>
+            <div class="skill-card reveal"><i class="fa-brands fa-css3-alt"></i><h3>CSS3</h3></div>
+            <div class="skill-card reveal"><i class="fa-brands fa-js"></i><h3>JavaScript</h3></div>
+            <div class="skill-card reveal"><i class="fa-brands fa-react"></i><h3>React.js</h3></div>
+            <div class="skill-card reveal"><i class="fa-brands fa-node-js"></i><h3>Node.js</h3></div>
+            <div class="skill-card reveal"><i class="fa-brands fa-python"></i><h3>Python</h3></div>
+            <div class="skill-card reveal"><i class="fa-solid fa-database"></i><h3>MongoDB</h3></div>
+            <div class="skill-card reveal"><i class="fa-brands fa-java"></i><h3>Java</h3></div>
+            <div class="skill-card reveal"><i class="fa-solid fa-wind"></i><h3>Tailwind CSS</h3></div>
         </div>
     </section>
 
     <!-- ================= PROJECTS ================= -->
     <section class="projects" id="projects">
-        <h2 class="section-title">Projects</h2>
+        <div class="section-header">
+            <span class="section-tag">// Projects</span>
+            <h2 class="section-title">Featured Work</h2>
+        </div>
         <div class="project-container">
 
-            <div class="project-card">
-                <img src="images/project1.png" alt="Smart Interview Analyzer">
+            <div class="project-card reveal">
+                <div class="project-img-wrap">
+                    <img src="images/project1.png" alt="Smart Interview Analyzer">
+                    <div class="project-overlay">
+                        <span class="project-num">01</span>
+                    </div>
+                </div>
                 <div class="project-body">
                     <h3>Smart Interview Analyzer</h3>
                     <p>AI-powered interview prep platform that analyzes user responses and provides real-time NLP-based feedback on clarity, relevance, and confidence.</p>
@@ -109,8 +207,13 @@
                 </div>
             </div>
 
-            <div class="project-card">
-                <img src="images/project2.png" alt="AI Placement Portal">
+            <div class="project-card reveal">
+                <div class="project-img-wrap">
+                    <img src="images/project2.png" alt="AI Placement Portal">
+                    <div class="project-overlay">
+                        <span class="project-num">02</span>
+                    </div>
+                </div>
                 <div class="project-body">
                     <h3>AI Placement Portal</h3>
                     <p>Intelligent placement platform that matches students with job opportunities via AI, with resume parsing, skill extraction, and ML-based placement prediction.</p>
@@ -120,13 +223,34 @@
                 </div>
             </div>
 
-            <div class="project-card">
-                <img src="images/project3.png" alt="Health & Fitness Tracker">
+            <div class="project-card reveal">
+                <div class="project-img-wrap">
+                    <img src="images/project3.png" alt="Health & Fitness Tracker">
+                    <div class="project-overlay">
+                        <span class="project-num">03</span>
+                    </div>
+                </div>
                 <div class="project-body">
-                    <h3>Health & Fitness Tracker</h3>
+                    <h3>Health &amp; Fitness Tracker</h3>
                     <p>Comprehensive fitness tracking app to monitor daily workouts and health metrics with a personalized dashboard, REST APIs, and secure user authentication.</p>
                     <div class="project-tags">
                         <span>React.js</span><span>Tailwind CSS</span><span>Node.js</span><span>MongoDB</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card reveal">
+                <div class="project-img-wrap">
+                    <img src="images/project4.png" alt="Atmos Weather Dashboard">
+                    <div class="project-overlay">
+                        <span class="project-num">04</span>
+                    </div>
+                </div>
+                <div class="project-body">
+                    <h3>Atmos — Weather Dashboard</h3>
+                    <p>A full-stack premium weather SPA with real-time global weather, auto location detection, dynamic weather-aware backgrounds with canvas particle effects (rain, snow, lightning), 7-day forecast, hourly strips, Chart.js analytics, AI-style lifestyle tips, JWT auth, and saved favourites — all fully responsive.</p>
+                    <div class="project-tags">
+                        <span>Vanilla JS</span><span>Node.js</span><span>MongoDB</span><span>Chart.js</span><span>WeatherAPI</span><span>Canvas API</span>
                     </div>
                 </div>
             </div>
@@ -136,45 +260,48 @@
 
     <!-- ================= CERTIFICATIONS ================= -->
     <section class="certifications" id="certifications">
-        <h2 class="section-title">Certifications</h2>
+        <div class="section-header">
+            <span class="section-tag">// Certifications</span>
+            <h2 class="section-title">Achievements</h2>
+        </div>
         <div class="cert-container">
-            <div class="cert-card">
-                <i class="fa-solid fa-certificate"></i>
+            <div class="cert-card reveal">
+                <div class="cert-icon"><i class="fa-solid fa-certificate"></i></div>
                 <div>
                     <h4>Full Stack Web Development</h4>
                     <p>IIT Bombay / IIT Patna</p>
                 </div>
             </div>
-            <div class="cert-card">
-                <i class="fa-solid fa-cloud"></i>
+            <div class="cert-card reveal">
+                <div class="cert-icon"><i class="fa-solid fa-cloud"></i></div>
                 <div>
                     <h4>Cloud Computing</h4>
                     <p>IIT Patna</p>
                 </div>
             </div>
-            <div class="cert-card">
-                <i class="fa-solid fa-network-wired"></i>
+            <div class="cert-card reveal">
+                <div class="cert-icon"><i class="fa-solid fa-network-wired"></i></div>
                 <div>
                     <h4>Distributed Systems</h4>
                     <p>Course Completed</p>
                 </div>
             </div>
-            <div class="cert-card">
-                <i class="fa-solid fa-microchip"></i>
+            <div class="cert-card reveal">
+                <div class="cert-icon"><i class="fa-solid fa-microchip"></i></div>
                 <div>
                     <h4>Internet of Things (IoT)</h4>
                     <p>IIT Kharagpur</p>
                 </div>
             </div>
-            <div class="cert-card">
-                <i class="fa-solid fa-trophy"></i>
+            <div class="cert-card reveal">
+                <div class="cert-icon"><i class="fa-solid fa-trophy"></i></div>
                 <div>
                     <h4>Innovit Hackathon</h4>
                     <p>Grand Finalist – Atmanirbhar Bharat</p>
                 </div>
             </div>
-            <div class="cert-card">
-                <i class="fa-solid fa-graduation-cap"></i>
+            <div class="cert-card reveal">
+                <div class="cert-icon"><i class="fa-solid fa-graduation-cap"></i></div>
                 <div>
                     <h4>NPTEL Certificate</h4>
                     <p>NPTEL Online Courses</p>
@@ -185,34 +312,56 @@
 
     <!-- ================= CONTACT ================= -->
     <section class="contact" id="contact">
-        <h2 class="section-title">Contact Me</h2>
+        <div class="contact-glow"></div>
+        <div class="section-header">
+            <span class="section-tag">// Contact</span>
+            <h2 class="section-title">Let's Connect</h2>
+        </div>
         <div class="contact-container">
-            <div class="contact-info">
-                <h3>Let's Connect</h3>
-                <p>Feel free to contact me for projects, internships and collaborations.</p>
-                <div class="info-box">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>bhav.24bsa10145@vitbhopal.ac.in</span>
+            <p class="contact-sub">Feel free to reach out for projects, internships, and collaborations. I'm always open to exciting opportunities.</p>
+            <div class="contact-grid">
+                <a href="mailto:bhav.24bsa10145@vitbhopal.ac.in" class="contact-card reveal">
+                    <div class="contact-card-icon"><i class="fa-solid fa-envelope"></i></div>
+                    <div>
+                        <p class="contact-label">Email</p>
+                        <p class="contact-value">bhav.24bsa10145@vitbhopal.ac.in</p>
+                    </div>
+                </a>
+                <a href="tel:8827515895" class="contact-card reveal">
+                    <div class="contact-card-icon"><i class="fa-solid fa-phone"></i></div>
+                    <div>
+                        <p class="contact-label">Phone</p>
+                        <p class="contact-value">+91 8827515895</p>
+                    </div>
+                </a>
+                <div class="contact-card reveal">
+                    <div class="contact-card-icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div>
+                        <p class="contact-label">Location</p>
+                        <p class="contact-value">Bhopal, Madhya Pradesh</p>
+                    </div>
                 </div>
-                <div class="info-box">
-                    <i class="fa-solid fa-phone"></i>
-                    <span>8827515895</span>
-                </div>
-                <div class="info-box">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span>Bhopal, Madhya Pradesh</span>
-                </div>
-                <div class="social-icons">
-                    <a href="https://github.com/bhavsimar39-hub" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/bhav-simar-b4a647331" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                </div>
+            </div>
+            <div class="social-icons">
+                <a href="https://github.com/bhavsimar39-hub" target="_blank" class="social-link">
+                    <i class="fa-brands fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/bhav-simar-b4a647331" target="_blank" class="social-link">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <span>LinkedIn</span>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- ================= FOOTER ================= -->
     <footer>
-        <p>© 2026 Bhav Simar | All Rights Reserved</p>
+        <div class="footer-inner">
+            <div class="footer-logo">BS<span>.</span></div>
+            <p>© 2026 Bhav Simar. Crafted with <i class="fa-solid fa-heart"></i> &amp; passion.</p>
+            <a href="#home" class="back-to-top"><i class="fa-solid fa-arrow-up"></i></a>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
