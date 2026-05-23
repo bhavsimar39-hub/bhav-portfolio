@@ -2,9 +2,9 @@
 const cursorDot  = document.querySelector(".cursor-dot");
 const cursorRing = document.querySelector(".cursor-ring");
 
-const isTouchDevice = () => window.matchMedia("(hover: none)").matches;
+const isTouch = () => window.matchMedia("(hover: none)").matches;
 
-if (cursorDot && cursorRing && !isTouchDevice()) {
+if (cursorDot && cursorRing && !isTouch()) {
     document.addEventListener("mousemove", (e) => {
         cursorDot.style.left  = e.clientX + "px";
         cursorDot.style.top   = e.clientY + "px";
@@ -13,15 +13,14 @@ if (cursorDot && cursorRing && !isTouchDevice()) {
             cursorRing.style.top  = e.clientY + "px";
         }, 60);
     });
-
     document.querySelectorAll("a, button, .skill-card, .project-card, .cert-card").forEach(el => {
         el.addEventListener("mouseenter", () => {
-            cursorRing.style.width  = "56px";
+            cursorRing.style.width = "56px";
             cursorRing.style.height = "56px";
             cursorRing.style.opacity = "1";
         });
         el.addEventListener("mouseleave", () => {
-            cursorRing.style.width  = "36px";
+            cursorRing.style.width = "36px";
             cursorRing.style.height = "36px";
             cursorRing.style.opacity = "0.6";
         });
@@ -36,82 +35,56 @@ if (navbar) {
     }, { passive: true });
 }
 
-// ================= ACTIVE NAVBAR LINK =================
-const sections = document.querySelectorAll("section");
-const navLinks  = document.querySelectorAll(".nav-links a");
+// ================= ACTIVE NAV LINKS (top + bottom) =================
+const sections      = document.querySelectorAll("section");
+const topNavLinks   = document.querySelectorAll(".nav-links a");
+const bottomNavItems = document.querySelectorAll(".bottom-nav-item");
 
-window.addEventListener("scroll", () => {
+function updateActiveLinks() {
     let current = "";
     sections.forEach((section) => {
         if (pageYOffset >= section.offsetTop - 220) {
             current = section.getAttribute("id");
         }
     });
-    navLinks.forEach((link) => {
+
+    topNavLinks.forEach((link) => {
         link.classList.toggle("active", link.getAttribute("href") === "#" + current);
     });
-}, { passive: true });
+
+    // Map section IDs to bottom nav hrefs
+    const bottomMap = {
+        "home": "#home",
+        "about": "#about",
+        "experience": "#skills",  // experience not in bottom nav, map to skills
+        "skills": "#skills",
+        "projects": "#projects",
+        "certifications": "#projects", // map to work tab
+        "contact": "#contact"
+    };
+    const targetHref = bottomMap[current] || "#home";
+    bottomNavItems.forEach((item) => {
+        item.classList.toggle("active", item.getAttribute("href") === targetHref);
+    });
+}
+
+window.addEventListener("scroll", updateActiveLinks, { passive: true });
+updateActiveLinks();
 
 // ================= REVEAL ON SCROLL =================
 const revealEls = document.querySelectorAll(".reveal");
-
 if (revealEls.length) {
-    const revealObserver = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry, i) => {
             if (entry.isIntersecting) {
                 setTimeout(() => entry.target.classList.add("visible"), i * 80);
-                revealObserver.unobserve(entry.target);
+                observer.unobserve(entry.target);
             }
         });
     }, { threshold: 0.08, rootMargin: "0px 0px -40px 0px" });
-
-    revealEls.forEach(el => revealObserver.observe(el));
-
-    // Safety net — force-show after 2.5s in case observer doesn't fire
-    setTimeout(() => {
-        revealEls.forEach(el => el.classList.add("visible"));
-    }, 2500);
+    revealEls.forEach(el => observer.observe(el));
+    setTimeout(() => revealEls.forEach(el => el.classList.add("visible")), 2500);
 }
-
-// ================= MOBILE MENU =================
-const menuBtn    = document.getElementById("menuBtn");
-const navMenu    = document.getElementById("navMenu");
-const navOverlay = document.getElementById("navOverlay");
-const navItems   = document.querySelectorAll(".nav-links a");
-
-function openMenu() {
-    if (!navMenu || !menuBtn) return;
-    navMenu.classList.add("active");
-    if (navOverlay) { navOverlay.style.display = "block"; setTimeout(() => navOverlay.classList.add("active"), 10); }
-    menuBtn.querySelector("i").className = "fa-solid fa-xmark";
-    document.body.style.overflow = "hidden";
-}
-
-function closeMenu() {
-    if (!navMenu || !menuBtn) return;
-    navMenu.classList.remove("active");
-    if (navOverlay) {
-        navOverlay.classList.remove("active");
-        setTimeout(() => { navOverlay.style.display = "none"; }, 400);
-    }
-    menuBtn.querySelector("i").className = "fa-solid fa-bars";
-    document.body.style.overflow = "";
-}
-
-if (menuBtn) {
-    menuBtn.addEventListener("click", () => {
-        navMenu && navMenu.classList.contains("active") ? closeMenu() : openMenu();
-    });
-}
-
-const navCloseBtn = document.getElementById("navCloseBtn");
-if (navCloseBtn) navCloseBtn.addEventListener("click", closeMenu);
-
-if (navOverlay) {
-    navOverlay.addEventListener("click", closeMenu);
-}
-
-navItems.forEach(item => item.addEventListener("click", closeMenu));
 
 // ================= TYPING ANIMATION =================
 if (typeof Typed !== "undefined" && document.querySelector(".typing")) {
