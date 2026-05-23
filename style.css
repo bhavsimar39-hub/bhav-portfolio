@@ -1004,9 +1004,9 @@ footer {
 }
 
 /* ================= BOTTOM NAV (mobile only) ================= */
-.bottom-nav {
-    display: none;
-}
+.bottom-nav { display: none; }
+/* Ensure no hamburger/close elements ever show on desktop */
+.menu-btn, .nav-close-item, .nav-close-btn { display: none !important; }
 
 /* ================= RESPONSIVE: TABLET ================= */
 @media (max-width: 1050px) {
